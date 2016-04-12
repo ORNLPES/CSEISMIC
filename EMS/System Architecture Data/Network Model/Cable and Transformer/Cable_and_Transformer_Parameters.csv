@@ -1,0 +1,2 @@
+Cable #,From,To,Conductor Type,Voltage Rating,Conductor AWG,Conductor Length (ft),Capacity (KVA),R in Ohms,X in Ohms
+1,1,2,C,480,500,350,100,0.0515,0.029

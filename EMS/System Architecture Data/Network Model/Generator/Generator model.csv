@@ -1,0 +1,2 @@
+Gen #,Bus #,Voltage (V),Rating (kVA),Min P,Max P,Min Power Factor (leading),Max Power factor (lagging),4th order coefficient,3th order coefficient,2th order coefficient,1th order coefficient,0th order coefficient,Start-up time (s),Start-up cost,Fuel cost,Initial Status
+1,1,480,50,5,50,0.6,-0.6,0,0,77.665,39.5165,12.5,10,3,3,1

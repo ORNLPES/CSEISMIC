@@ -1,0 +1,12 @@
+CurrentPhaseA
+CurrentPhaseB
+CurrentPhaseC
+VoltagePhaseA
+VoltagePhaseB
+VoltagePhaseC
+RealPowerPhaseA
+RealPowerPhaseB
+RealPowerPhaseC
+ReactivePowerPhaseA
+ReactivePowerPhaseB
+ReactivePowerPhaseC

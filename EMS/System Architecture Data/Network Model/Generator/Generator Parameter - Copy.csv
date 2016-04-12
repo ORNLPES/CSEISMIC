@@ -1,0 +1,2 @@
+Gen #,Bus #,Voltage (V),Rating (kVA),Min P,Max P,Min Power Factor (leading),Max Power factor (lagging),e1,e2,nlc,mc1,mc2,mc3,Start-up time (s),Start-up cost,Initial Status
+1,1,480,50,5,50,0.9,-0.9,20,35,0.085,0.018206,0.027841,0.049968,10,0.06,1

@@ -1,0 +1,2 @@
+Battery #,Bus #,Voltage (V),Power Rating (kVA),Energy Rating (kWh),Ramp Rate (kW/s),Max Power Factor (leading),Max Power factor (lagging),Min SOC(%),Max SOC(%),Charging Efficiency,Discharging Efficiency,	Start SOC(%),End SOC(%)
+1.000000,1.000000,480.000000,50.000000,200.000000,8000.000000,0.600000,-0.600000,25.000000,95.000000,0.950000,0.950000,49.806061,50.000000

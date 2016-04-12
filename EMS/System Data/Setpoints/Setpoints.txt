@@ -1,0 +1,4 @@
+ES2,Real,50000.000000
+ES2,Reactive,0.000000
+ES2,Voltage,480.000000
+ES2,Frequency,60.000000

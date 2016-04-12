@@ -1,0 +1,3 @@
+Load,34.015259
+ES,35.016235
+MicrogridSwitch,36.016235

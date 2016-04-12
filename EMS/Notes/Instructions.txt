@@ -1,0 +1,9 @@
+Instructions:
+
+* All files for devices must be inserted into System Architecture Data/CID files before running
+the program. 
+
+These are the files that will be 
+1) sent to SCADA 
+2) elements upon which communications protocols between EMS and SCADA exist
+3) defining the optimization 

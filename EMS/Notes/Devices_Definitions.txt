@@ -1,0 +1,6 @@
+Type 1: PV Source
+Type 2: Energy Storage
+Type 3: Generator
+Type 4: Relay 
+Type 5: Mainswitch
+Type 6: Wind

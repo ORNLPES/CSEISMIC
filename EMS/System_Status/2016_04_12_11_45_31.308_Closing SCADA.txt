@@ -1,0 +1,1 @@
+OBJ must be connected to the hardware with FOPEN.

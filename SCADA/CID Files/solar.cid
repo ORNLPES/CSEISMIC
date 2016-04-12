@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+  <Header id="IED15" nameStructure="IEDName" revision="R 001" toolID="Manual" version="">
+    <History>
+      <Hitem revision="R 001" version="V 0.0" what="test" when="Tue Jun 09 10:19:00 EDT 2015" who="wdk" why=""/>
+    </History>
+  </Header>
+  <Communication>
+	  <SubNetwork name="Subnet2" type="8-MMS">
+      <ConnectedAP apName="AP15" iedName="IED15">
+        <Address>
+          <P type="IP">192.168.48.15</P>
+          <P type="OSI-AP-Title">1,3,9999,23</P>
+          <P type="IP-SUBNET">255.255.255.0</P>
+          <P type="OSI-AE-Qualifier">15</P>
+		      <P type="OSI-AP-Invoke">10</P>
+          <P type="OSI-AE-Invoke">10</P>
+          <P type="OSI-PSEL">00000001</P>
+          <P type="OSI-SSEL">0001</P>
+          <P type="OSI-TSEL">0001</P>
+        </Address>
+        <PhysConn type="Connection">
+          <P type="Type"> 100BaseT</P>
+        </PhysConn>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+  <IED name="IED15" configVersion="1.0" manufacturer="ORNL" type="Default">
+	  <AccessPoint name="AP15">
+      <Server>
+        <Authentication none="true"/>
+        <LDevice inst="L1">
+          <LN0 lnType="lln0_node" inst="" lnClass="LLN0"/>
+          <LN lnType="lphd_node" inst="1" lnClass="LPHD"/>
+          <LN lnType="cswi_node" inst="1" lnClass="CSWI"/>
+          <LN lnType="dpva_node" inst="1" lnClass="DPVA"/>
+          <LN lnType="dpvc_node" inst="1" lnClass="DPVC"/>
+		      <LN lnType="dpvm_node" inst="1" lnClass="DPVM"/>
+          <LN lnType="drcc_node" inst="1" lnClass="DRCC"/>
+          <LN lnType="dtrc_node" inst="1" lnClass="DTRC"/>
+          <LN lnType="mmdc_node" inst="1" lnClass="MMDC"/>
+          <LN lnType="mmxu_node" inst="1" lnClass="MMXU"/>
+          <LN lnType="xcbr_node" inst="1" lnClass="XCBR"/>
+          <LN lnType="xswi_node" inst="1" lnClass="XSWI"/>
+		      <LN lnType="zbat_node" inst="1" lnClass="ZBAT"/>
+		      <LN lnType="zinv_node" inst="1" lnClass="ZINV"/>
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+    <LNodeType id="lphd_node" lnClass="LPHD">
+      <DO accessControl="" name="PhyHealth" type="INS" transient="false"/>
+      <DO accessControl="" name="Proxy" type="SPS" transient="false"/>
+    </LNodeType>
+    <LNodeType id="mmxu_node" lnClass="MMXU">
+      <DO accessControl="" name="PhV" type="WYE" transient="false"/>
+      <DO accessControl="" name="W" type="WYE" transient="false"/>
+      <DO accessControl="" name="VAr" type="WYE" transient="false"/>
+    </LNodeType>
+    <LNodeType id="dpva_node" lnClass="DPVA">
+      <DO accessControl="" name="Typ" type="ENG_DPVA_Typ" transient="false"/>
+      <DO accessControl="" name="GrndConn" type="ENG_DPVA_GrndConn" transient="false"/>
+      <DO accessControl="" name="MdulCnt" type="ING" transient="false"/>
+	    <DO accessControl="" name="StrgCnt" type="ING" transient="false"/>
+	    <DO accessControl="" name="SubArrCnt" type="ING" transient="false"/>
+	    <DO accessControl="" name="ArrArea" type="ASG" transient="false"/>
+	    <DO accessControl="" name="ArrWrtg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="Tilt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="Azi" type="ASG" transient="false"/>
+    </LNodeType>
+    <LNodeType id="dpvc_node" lnClass="DPVC">
+      <DO accessControl="" name="CtrModSt" type="INS" transient="false"/>
+      <DO accessControl="" name="TrkRefV" type="ASG" transient="false"/>
+      <DO accessControl="" name="TrkWupV" type="ASG" transient="false"/>
+	    <DO accessControl="" name="TrkDlWupTms" type="ING" transient="false"/>
+	    <DO accessControl="" name="TrkDlSlpTms" type="ING" transient="false"/>
+	    <DO accessControl="" name="TrkSlpW" type="ASG" transient="false"/>
+	    <DO accessControl="" name="TrkRte" type="ING" transient="false"/>
+	    <DO accessControl="" name="TrkVStp" type="ASG" transient="false"/>
+	    <DO accessControl="" name="ArrModCtr" type="ENC" transient="false"/>
+    </LNodeType>
+    <LNodeType id="dpvm_node" lnClass="DPVM">
+      <DO accessControl="" name="AVCrv" type="INS" transient="false"/>
+      <DO accessControl="" name="MdulCfgTyp" type="ENG_DPVM" transient="false"/>
+	    <DO accessControl="" name="MdulWRtg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulW200Rtg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaxMdulV" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaxMdulA" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulOpnCctV" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulSrtCctA" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulWTmpDrt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulATmpDrt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulVTmpDrt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MdulAgeDrtPct" type="ASG" transient="false"/>
+    </LNodeType>
+    <LNodeType id="drcc_node" lnClass="DRCC">
+      <DO accessControl="" name="OutWSet" type="APC" transient="false"/>
+      <DO accessControl="" name="OutVarSet" type="APC" transient="false"/>
+	    <DO accessControl="" name="DERStr" type="SPC" transient="false"/>
+	    <DO accessControl="" name="DERStop" type="SPC" transient="false"/>
+      <DO accessControl="" name="AutoManCtl" type="SPC" transient="false"/>
+	    <DO accessControl="" name="LocRemCtl" type="SPC" transient="false"/>
+    </LNodeType>
+    <LNodeType id="dtrc_node" lnClass="DTRC">
+      <DO accessControl="" name="TrkTyp" type="ENG_DTRC_TrkTyp" transient="false"/>
+      <DO accessControl="" name="TrkAlm" type="SPS" transient="false"/>
+	    <DO accessControl="" name="TrkSt" type="ENS_DTRC_TrkSt" transient="true"/>
+	    <DO accessControl="" name="TrkTech" type="ENG_DTRC_TrkTech" transient="false"/>
+      <DO accessControl="" name="StowAziDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="StowElDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="StormAziDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="StormElDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="SnwAziDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="SnwElDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="NightAziDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="NightElDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaintAziDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaintElDeg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="IntvAzi" type="ASG" transient="false"/>
+	    <DO accessControl="" name="IntvEl" type="ASG" transient="false"/>
+	    <DO accessControl="" name="IntvTm" type="ASG" transient="false"/>
+	    <DO accessControl="" name="AziDegTgt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="ElDegTgt" type="ASG" transient="false"/>
+	    <DO accessControl="" name="TrkCtl" type="ENC_DTRC_TrkCtl" transient="false"/>
+	    <DO accessControl="" name="AziDeg" type="MV" transient="false"/>
+	    <DO accessControl="" name="ElDeg" type="MV" transient="false"/>
+    </LNodeType>
+    <LNodeType id="zbat_node" lnClass="ZBAT">
+      <DO accessControl="" name="BatSt" type="SPS" transient="false"/>
+	    <DO accessControl="" name="BatTestRsl" type="SPS" transient="false"/>
+	    <DO accessControl="" name="BatVHi" type="SPS" transient="false"/>
+	    <DO accessControl="" name="BatVLo" type="SPS" transient="false"/>
+      <DO accessControl="" name="BatTyp" type="ENG_BatTyp" transient="false"/>
+	    <DO accessControl="" name="AhrRtg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MinAhrRtg" type="ASG" transient="false"/>
+	    <DO accessControl="" name="BatVNom" type="ASG" transient="false"/>
+	    <DO accessControl="" name="BatSerCnt" type="ING" transient="false"/>
+	    <DO accessControl="" name="BatParCnt" type="ING" transient="false"/>
+	    <DO accessControl="" name="DisChaRte" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaxBatA" type="ASG" transient="false"/>
+	    <DO accessControl="" name="MaxChaV" type="ASG" transient="false"/>
+	    <DO accessControl="" name="HiBatVAlm" type="ASG" transient="false"/>
+	    <DO accessControl="" name="LoBatVAlm" type="ASG" transient="false"/>
+	    <DO accessControl="" name="Vol" type="MV" transient="false"/>
+	    <DO accessControl="" name="VolChgRte" type="MV" transient="false"/>
+	    <DO accessControl="" name="InBatV" type="MV" transient="false"/>
+	    <DO accessControl="" name="Amp" type="MV" transient="false"/>
+	    <DO accessControl="" name="InBatA" type="MV" transient="false"/>
+	    <DO accessControl="" name="InBatTmp" type="MV" transient="false"/>
+	    <DO accessControl="" name="BatOn" type="SPC" transient="false"/>
+	    <DO accessControl="" name="BatTest" type="SPC" transient="false"/>
+    </LNodeType>
+    <LNodeType id="lln0_node" lnClass="LLN0">
+      <DO accessControl="" name="Mod" type="INC" transient="false"/>
+      <DO accessControl="" name="Beh" type="INS" transient="false"/>
+      <DO accessControl="" name="Loc" type="SPS" transient="false"/>
+    </LNodeType>
+	  <DOType id="APC" cdc="APC">
+	    <DA bType="Struct" name="setMag" type="AnalogueValue" fc="SP"/>
+	    <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	    <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+	  </DOType>
+	  <DOType id="ASG" cdc="ASG">
+	    <DA bType="Struct" name="setMag" type="AnalogueValue" fc="SP"/>
+	  </DOType>
+	  <DOType id="ENC_DPVC" cdc="ENC">
+      <DA bType="Enum" name="ctlVal" type="DPVC_ArrModCtr" fc="CO"/>
+	    <DA bType="Enum" name="stVal" type="DPVC_ArrModCtr" dchg="true" fc="ST"/>
+    </DOType>
+	  <DOType id="ENC_DTRC_TrkCtl" cdc="ENC">
+      <DA bType="Enum" name="ctlVal" type="DTRC_TrkCtl" fc="CO"/>
+	    <DA bType="Enum" name="stVal" type="DTRC_TrkCtl" dchg="true" fc="ST"/>
+    </DOType>
+	  <DOType id="ENG_BatTyp" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="ZBAT_BatTyp" fc="SP"/>
+    </DOType>
+	  <DOType id="ENG_DPVA_GrndConn" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="DPVA_GrndConn" fc="SP"/>
+    </DOType>
+	  <DOType id="ENG_DPVA_Typ" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="DPVA_Typ" fc="SP"/>
+    </DOType>
+	  <DOType id="ENG_DPVM" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="DPVM_MdulCfgTyp" fc="SP"/>
+    </DOType>
+	  <DOType id="ENG_DTRC_TrkTech" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="DTRC_TrkTech" fc="SP"/>
+    </DOType>
+	  <DOType id="ENG_DTRC_TrkTyp" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="DTRC_TrkTyp" fc="SP"/>
+    </DOType>
+	  <DOType id="ENS_DTRC_TrkSt" cdc="ENS">
+      <DA bType="Enum" name="stVal" type="DTRC_TrkSt" fc="ST"/>
+    </DOType>
+    <DOType id="INC" cdc="INC">
+	    <DA bType="INT32" name="ctlVal" type="" fc="CO"/>
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	    <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+    </DOType>
+	  <DOType id="ING" cdc="ING">
+      <DA bType="INT32" name="setVal" type="" fc="SP"/>
+    </DOType>
+    <DOType id="INS" cdc="INS">
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+    <DOType id="SPC" cdc="SPC">
+      <DA bType="BOOLEAN" name="ctlVal" type="" fc="CO"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	    <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+    </DOType>
+    <DOType id="SPS" cdc="SPS">
+      <DA bType="BOOLEAN" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+    <DOType id="CMV" cdc="CMV">
+      <DA bType="Struct" name="cVal" type="Vector" dchg="true" fc="MX"/>
+      <DA bType="Quality" name="q" type="" fc="MX" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="MX"/>
+    </DOType>
+	  <DOType id="MV" cdc="MV">
+	    <DA name="instMag" bType="Struct" type="AnalogueValue" fc="MX"/>
+	    <DA name="mag" bType="Struct" type="AnalogueValue" dchg="true" fc="MX"/>
+      <DA bType="Quality" name="q" type="" fc="MX" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="MX"/>
+	  </DOType>
+    <DOType id="WYE" cdc="WYE">
+      <SDO name="phsA" type="CMV"/>
+      <SDO name="phsB" type="CMV"/>
+      <SDO name="phsC" type="CMV"/>
+    </DOType>
+    <DOType id="INC" cdc="INC">
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+	  <DAType id="Vector">
+	    <BDA bType="Struct" name="mag" type="AnalogueValue"/>
+	  </DAType>
+	  <DAType id="AnalogueValue">
+	    <BDA name="f" bType="FLOAT32" />
+	  </DAType>
+    <EnumType id="ctlModel">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+	  <EnumType id="DPVA_GrndConn">
+      <EnumVal ord="0">Unknown / Not Applicable</EnumVal>
+      <EnumVal ord="1">Positive Ground</EnumVal>
+      <EnumVal ord="2">Negative Ground</EnumVal>
+	    <EnumVal ord="3">Not grounded</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+	  <EnumType id="DPVA_Typ">
+      <EnumVal ord="0">Unknown / Not Applicable</EnumVal>
+      <EnumVal ord="1">Array</EnumVal>
+      <EnumVal ord="2">Sub-array</EnumVal>
+      <EnumVal ord="3">String</EnumVal>
+      <EnumVal ord="4">Module</EnumVal>
+	    <EnumVal ord="5">Plant</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+	  <EnumType id="DPVC_ArrModCtr">
+      <EnumVal ord="0">Not Applicable / Unknown</EnumVal>
+      <EnumVal ord="1">Maximum power point tracking (MPPT)</EnumVal>
+      <EnumVal ord="2">Power limiter controller</EnumVal>
+      <EnumVal ord="3">DC current limit</EnumVal>
+      <EnumVal ord="4">Array voltage control</EnumVal>
+	    <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+	  <EnumType id="DPVM_MdulCfgTyp">
+      <EnumVal ord="0">Unknown / Not Applicable</EnumVal>
+      <EnumVal ord="1">Flat plate</EnumVal>
+      <EnumVal ord="2">Concentrating</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+	  <EnumType id="DTRC_TrkCtl">
+      <EnumVal ord="1">Stop</EnumVal>
+      <EnumVal ord="2">Start tracking</EnumVal>
+      <EnumVal ord="3">Start reference run</EnumVal>
+      <EnumVal ord="4">Go to manual mode</EnumVal>
+	    <EnumVal ord="5">Go to stow position</EnumVal>
+      <EnumVal ord="6">Go to storm position</EnumVal>
+      <EnumVal ord="7">Go to snow position</EnumVal>
+      <EnumVal ord="8">Go to night position</EnumVal>
+      <EnumVal ord="9">Got to maintenance position</EnumVal>
+    </EnumType>
+	  <EnumType id="DTRC_TrkTyp">
+      <EnumVal ord="0">Not Applicable / Unknown</EnumVal>
+      <EnumVal ord="1">Fixed, no tracking</EnumVal>
+      <EnumVal ord="2">Single axis - vertical axis of rotation</EnumVal>
+      <EnumVal ord="3">Single axis - inclined axis of rotation (north-south)</EnumVal>
+      <EnumVal ord="4">Single axis - horizontal axis of rotation (north-south)</EnumVal>
+	    <EnumVal ord="5">Dual axis - horizontal and vertical axis of rotation</EnumVal>
+      <EnumVal ord="6">Dual axis - two dependent horizontal axes of rotation - main axis north-south</EnumVal>
+      <EnumVal ord="7">Dual axis - two dependent horizontal axes of rotation - main axis east-west</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+	  <EnumType id="DTRC_TrkSt">
+      <EnumVal ord="0">Unknown</EnumVal>
+      <EnumVal ord="1">Stopped</EnumVal>
+      <EnumVal ord="2">Automatic tracking in progress</EnumVal>
+      <EnumVal ord="3">Reference run in progress</EnumVal>
+      <EnumVal ord="4">Reference run completed</EnumVal>
+	    <EnumVal ord="5">Manual mode</EnumVal>
+      <EnumVal ord="6">Going to position</EnumVal>
+      <EnumVal ord="7">In target position</EnumVal>
+      <EnumVal ord="8">In stow position</EnumVal>
+      <EnumVal ord="9">In storm position</EnumVal>
+      <EnumVal ord="10">In snow position</EnumVal>
+	    <EnumVal ord="11">In night position</EnumVal>
+      <EnumVal ord="12">In maintenance position</EnumVal>
+    </EnumType>
+	  <EnumType id="DTRC_TrkTech">
+      <EnumVal ord="0">Not Applicable / Unknown</EnumVal>
+      <EnumVal ord="1">Sensory tracking</EnumVal>
+      <EnumVal ord="2">Astronomical tracking</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+    <EnumType id="ZBAT_BatTyp">
+      <EnumVal ord="0">Not applicable/Unknown</EnumVal>
+      <EnumVal ord="1">Lead-acid</EnumVal>
+      <EnumVal ord="2">Nickel-metal hydrate (NiMH)</EnumVal>
+      <EnumVal ord="3">Nickel-cadmium (NiCad)</EnumVal>
+      <EnumVal ord="4">Lithium</EnumVal>
+      <EnumVal ord="5">Carbon zinc</EnumVal>
+      <EnumVal ord="6">Zinc chloride</EnumVal>
+      <EnumVal ord="7">Alkaline</EnumVal>
+      <EnumVal ord="8">Rechargeable alkaline</EnumVal>
+      <EnumVal ord="9">Sodium sulphur (NaS)</EnumVal>
+      <EnumVal ord="10">Flow</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+  </DataTypeTemplates>
+</SCL>

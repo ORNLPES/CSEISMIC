@@ -1,0 +1,12 @@
+System Status Notes
+
+System Status of -1  error detected. 
+System Status of 0 - the system is in startup mode. 
+System Status of 1 - the system is ready
+System Status of 2 - the system is running optimization mode.  
+System Status of 3 - the system is entering islanded operation. 
+System Status of 4 - the system is running islanded optimization mode.
+System Status of 5 - the system is entering grid connected operation
+System Status of 6 - the system is starting in black start islanded mode
+System Status of 7 - the system is shutting down 
+System Status of 8 - the system is entering unitentional islanding

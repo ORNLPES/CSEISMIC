@@ -1,0 +1,10 @@
+VoltagePhaseAMeasurement
+VoltagePhaseBMeasurement
+VoltagePhaseCMeasurement
+RealPowerPhaseAMeasurement
+RealPowerPhaseBMeasurement
+RealPowerPhaseCMeasurement
+ReactivePowerPhaseAMeasurement
+ReactivePowerPhaseBMeasurement
+ReactivePowerPhaseCMeasurement
+StateofCharge

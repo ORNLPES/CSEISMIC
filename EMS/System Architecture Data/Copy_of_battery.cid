@@ -1,0 +1,183 @@
+<SCL
+  xmlns:xsi="C:\Users\33i\Dropbox (ORNL)\Configuration_File Creator\Configuration Information\Schema Defintion\xml schema test.xsd"
+  xsi:noNamespaceSchemaLocation="http://www.mathworks.com/namespace/info/v1/info.xsd">
+  
+  
+  <Header id="IED15" nameStructure="IEDName" revision="R 001" toolID="Manual" version="">
+    <History>
+      <Hitem revision="R 001" version="V 0.0" what="test" when="Tue Jun 09 10:19:00 EDT 2015" who="wdk" why=""/>
+    </History>
+  </Header>
+  <Communication>
+	<SubNetwork name="Subnet2" type="8-MMS">
+      <ConnectedAP apName="AP15" iedName="IED15">
+        <Address>
+          <P type="IP">192.168.48.15</P>
+          <P type="OSI-AP-Title">1,3,9999,23</P>
+          <P type="IP-SUBNET">255.255.255.0</P>
+          <P type="OSI-AE-Qualifier">15</P>
+		  <P type="OSI-AP-Invoke">10</P>
+          <P type="OSI-AE-Invoke">10</P>
+          <P type="OSI-PSEL">00000001</P>
+          <P type="OSI-SSEL">0001</P>
+          <P type="OSI-TSEL">0001</P>
+        </Address>
+        <PhysConn type="Connection">
+          <P type="Type"> 100BaseT</P>
+        </PhysConn>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+  <IED name="IED15" configVersion="1.0" manufacturer="ORNL" type="Default">
+	<AccessPoint name="AP15">
+      <Server>
+        <Authentication none="true"/>
+        <LDevice inst="L1">
+          <LN0 lnType="lln0_node" inst="" lnClass="LLN0"/>
+          <LN lnType="lphd_node" inst="1" lnClass="LPHD"/>
+          <LN lnType="mmxu_node" inst="1" lnClass="MMXU"/>
+		  <LN lnType="drcc_node" inst="1" lnClass="DRCC"/>
+		  <LN lnType="zbat_node" inst="1" lnClass="ZBAT"/>
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+    <LNodeType id="lphd_node" lnClass="LPHD">
+      <DO accessControl="" name="PhyHealth" type="INS" transient="false"/>
+      <DO accessControl="" name="Proxy" type="SPS" transient="false"/>
+    </LNodeType>
+    <LNodeType id="mmxu_node" lnClass="MMXU">
+      <DO accessControl="" name="PhV" type="WYE" transient="false"/>
+      <DO accessControl="" name="W" type="WYE" transient="false"/>
+      <DO accessControl="" name="VAr" type="WYE" transient="false"/>
+    </LNodeType>
+    <LNodeType id="drcc_node" lnClass="DRCC">
+      <DO accessControl="" name="OutWSet" type="APC" transient="false"/>
+      <DO accessControl="" name="OutVarSet" type="APC" transient="false"/>
+	  <DO accessControl="" name="DERStr" type="SPC" transient="false"/>
+	  <DO accessControl="" name="DERStop" type="SPC" transient="false"/>
+      <DO accessControl="" name="AutoManCtl" type="SPC" transient="false"/>
+	  <DO accessControl="" name="LocRemCtl" type="SPC" transient="false"/>
+    </LNodeType>
+    <LNodeType id="zbat_node" lnClass="ZBAT">
+      <DO accessControl="" name="BatSt" type="SPS" transient="false"/>
+	  <DO accessControl="" name="BatTestRsl" type="SPS" transient="false"/>
+	  <DO accessControl="" name="BatVHi" type="SPS" transient="false"/>
+	  <DO accessControl="" name="BatVLo" type="SPS" transient="false"/>
+      <DO accessControl="" name="BatTyp" type="ENG_BatTyp" transient="false"/>
+	  <DO accessControl="" name="AhrRtg" type="ASG" transient="false"/>
+	  <DO accessControl="" name="MinAhrRtg" type="ASG" transient="false"/>
+	  <DO accessControl="" name="BatVNom" type="ASG" transient="false"/>
+	  <DO accessControl="" name="BatSerCnt" type="ING" transient="false"/>
+	  <DO accessControl="" name="BatParCnt" type="ING" transient="false"/>
+	  <DO accessControl="" name="DisChaRte" type="ASG" transient="false"/>
+	  <DO accessControl="" name="MaxBatA" type="ASG" transient="false"/>
+	  <DO accessControl="" name="MaxChaV" type="ASG" transient="false"/>
+	  <DO accessControl="" name="HiBatVAlm" type="ASG" transient="false"/>
+	  <DO accessControl="" name="LoBatVAlm" type="ASG" transient="false"/>
+	  <DO accessControl="" name="Vol" type="MV" transient="false"/>
+	  <DO accessControl="" name="VolChgRte" type="MV" transient="false"/>
+	  <DO accessControl="" name="InBatV" type="MV" transient="false"/>
+	  <DO accessControl="" name="Amp" type="MV" transient="false"/>
+	  <DO accessControl="" name="InBatA" type="MV" transient="false"/>
+	  <DO accessControl="" name="InBatTmp" type="MV" transient="false"/>
+	  <DO accessControl="" name="BatOn" type="SPC" transient="false"/>
+	  <DO accessControl="" name="BatTest" type="SPC" transient="false"/>
+    </LNodeType>
+    <LNodeType id="lln0_node" lnClass="LLN0">
+      <DO accessControl="" name="Mod" type="INC" transient="false"/>
+      <DO accessControl="" name="Beh" type="INS" transient="false"/>
+      <DO accessControl="" name="Loc" type="SPS" transient="false"/>
+    </LNodeType>
+	<DOType id="APC" cdc="APC">
+	  <DA bType="Struct" name="setMag" type="AnalogueValue" fc="SP"/>
+	  <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	  <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+	</DOType>
+	<DOType id="ASG" cdc="ASG">
+	  <DA bType="Struct" name="setMag" type="AnalogueValue" fc="SP"/>
+	</DOType>
+	<DOType id="ENG_BatTyp" cdc="ENG">
+      <DA bType="Enum" name="stVal" type="BatTyp" fc="SP"/>
+    </DOType>
+    <DOType id="INC" cdc="INC">
+	  <DA bType="INT32" name="ctlVal" type="" fc="CO"/>
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	  <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+    </DOType>
+	<DOType id="ING" cdc="ING">
+      <DA bType="INT32" name="setVal" type="" fc="SP"/>
+    </DOType>
+    <DOType id="INS" cdc="INS">
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+    <DOType id="SPC" cdc="SPC">
+      <DA bType="BOOLEAN" name="ctlVal" type="" fc="CO"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+	  <DA bType="Enum" name="ctlModel" type="ctlModel" fc="CF"/>
+    </DOType>
+    <DOType id="SPS" cdc="SPS">
+      <DA bType="BOOLEAN" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+    <DOType id="CMV" cdc="CMV">
+      <DA bType="Struct" name="cVal" type="Vector" dchg="true" fc="MX"/>
+      <DA bType="Quality" name="q" type="" fc="MX" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="MX"/>
+    </DOType>
+	<DOType id="MV" cdc="MV">
+	  <DA name="instMag" bType="Struct" type="AnalogueValue" fc="MX"/>
+	  <DA name="mag" bType="Struct" type="AnalogueValue" dchg="true" fc="MX"/>
+      <DA bType="Quality" name="q" type="" fc="MX" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="MX"/>
+	</DOType>
+    <DOType id="WYE" cdc="WYE">
+      <SDO name="phsA" type="CMV"/>
+      <SDO name="phsB" type="CMV"/>
+      <SDO name="phsC" type="CMV"/>
+    </DOType>
+    <DOType id="INC" cdc="INC">
+      <DA bType="INT32" name="stVal" type="" dchg="true" fc="ST"/>
+      <DA bType="Quality" name="q" type="" fc="ST" qchg="true"/>
+      <DA bType="Timestamp" name="t" type="" fc="ST"/>
+    </DOType>
+	<DAType id="Vector">
+	  <BDA bType="Struct" name="mag" type="AnalogueValue"/>
+	</DAType>
+	<DAType id="AnalogueValue">
+	  <BDA name="f" bType="FLOAT32" />
+	</DAType>
+    <EnumType id="ctlModel">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+    <EnumType id="BatTyp">
+      <EnumVal ord="0">Not applicable/Unknown</EnumVal>
+      <EnumVal ord="1">Lead-acid</EnumVal>
+      <EnumVal ord="2">Nickel-metal hydrate (NiMH)</EnumVal>
+      <EnumVal ord="3">Nickel-cadmium (NiCad)</EnumVal>
+      <EnumVal ord="4">Lithium</EnumVal>
+      <EnumVal ord="5">Carbon zinc</EnumVal>
+      <EnumVal ord="6">Zinc chloride</EnumVal>
+      <EnumVal ord="7">Alkaline</EnumVal>
+      <EnumVal ord="8">Rechargeable alkaline</EnumVal>
+      <EnumVal ord="9">Sodium sulphur (NaS)</EnumVal>
+      <EnumVal ord="10">Flow</EnumVal>
+      <EnumVal ord="99">Other</EnumVal>
+    </EnumType>
+  </DataTypeTemplates>
+  
+  
+
+</SCL>
