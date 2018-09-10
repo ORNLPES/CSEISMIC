@@ -1,0 +1,2 @@
+password to island and resync is: transition
+path for default config path in \LabVIEW EMS\Configuration\EMS-config.ini can be changed by loading a new config in CSEISMIC and going to Settings>>Set as Default Configuration
